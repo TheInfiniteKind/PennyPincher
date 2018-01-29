@@ -2,15 +2,15 @@ import UIKit
 import UIKit.UIGestureRecognizerSubclass
 
 public class PennyPincherGestureRecognizer: UIGestureRecognizer {
-    public var enableMultipleStrokes: Bool = true
-    public var allowedTimeBetweenMultipleStrokes: TimeInterval = 0.2
+    @objc public var enableMultipleStrokes: Bool = true
+    @objc public var allowedTimeBetweenMultipleStrokes: TimeInterval = 0.2
     public var templates = [PennyPincherTemplate]()
     
     private(set) public var result: (template: PennyPincherTemplate, similarity: CGFloat)?
     
     private(set) var pennyPincher = PennyPincher()
-    private(set) var points = [CGPoint]()
-    private(set) var timer: Timer?
+    @objc private(set) var points = [CGPoint]()
+    @objc private(set) var timer: Timer?
     
     public override func reset() {
         super.reset()

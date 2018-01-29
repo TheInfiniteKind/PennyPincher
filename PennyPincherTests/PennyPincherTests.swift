@@ -59,7 +59,7 @@ class PennyPincherTests: XCTestCase {
         
         if let template = template, let (foundTemplate, similarity) = PennyPincher.recognize(points, templates: [template]) {
             XCTAssertEqual(foundTemplate.id, template.id)
-            XCTAssertEqualWithAccuracy(similarity, 12.0, accuracy: 0.1)
+            XCTAssertEqual(similarity, 12.0, accuracy: 0.1)
         } else {
             XCTFail("Expected recognition result.")
         }
